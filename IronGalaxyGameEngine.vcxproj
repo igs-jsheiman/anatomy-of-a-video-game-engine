@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\IGEngine\Log.h" />
     <ClInclude Include="Source\IGEngine.h" />
     <ClInclude Include="Source\IGEngine\Application.h" />
     <ClInclude Include="Source\IGEngine\Core.h" />
     <ClInclude Include="Source\IGEngine\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\IGEngine\Log.cpp" />
     <ClCompile Include="Source\IGEngine\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

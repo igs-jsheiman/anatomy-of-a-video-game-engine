@@ -1,12 +1,26 @@
+#include "igpch.h"
 #include "Log.h"
-
-#include <iostream>
-#include <ctime>
-#include <iomanip>
-#include <fstream>
 
 namespace IGEngine
 {
+	const char* LogLevelStr[] =
+	{
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR",
+		"CRITICAL"
+	};
+
+	const char* LogLevelColor[] =
+	{
+		"\033[36m", // Cyan
+		"\033[0m",	// White
+		"\033[33m", // Yellow
+		"\033[31m", // Red
+		"\033[35m", // Magenta
+	};
+
 	// Initialize the static member variable to a null pointer
 	// so the first time anything asks for the instance it will create it.
 	Log* Log::LogInstance = nullptr;

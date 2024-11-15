@@ -2,10 +2,10 @@
 
 #include "Core.h"
 
-#include <mutex>
-
 // Must instantiate stl classes for dll prior to usage
 class IGENGINE_API std::mutex;
+
+// Log class based on article from this source : https://araujo88.medium.com/devlog-writing-a-logging-library-in-c-9601ec3699eb
 
 namespace IGEngine
 {
@@ -17,24 +17,6 @@ namespace IGEngine
 		WARNING,
 		ERROR,
 		CRITICAL
-	};
-
-	const char* LogLevelStr[] =
-	{
-		"DEBUG",
-		"INFO",
-		"WARNING",
-		"ERROR",
-		"CRITICAL"
-	};
-
-	const char* LogLevelColor[] =
-	{
-		"\033[36m", // Cyan
-		"\033[0m",	// White
-		"\033[33m", // Yellow
-		"\033[31m", // Red
-		"\033[35m", // Magenta
 	};
 
 #define LOG(logger, level, message) (logger)->LogMsg(message, level, __FILE__, __LINE__, false)

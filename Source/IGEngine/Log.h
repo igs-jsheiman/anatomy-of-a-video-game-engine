@@ -37,12 +37,20 @@ namespace IGEngine
 		"\033[35m", // Magenta
 	};
 
-#define LOG(logger, level, message) (logger)->LogMsg(message, level, __FILE__, __LINE__)
+#define LOG(logger, level, message) (logger)->LogMsg(message, level, __FILE__, __LINE__, false)
+#define LOG_FILE(logger, level, message) (logger)->LogMsg(message, level, __FILE__, __LINE__, true)
+
 #define LOG_DEBUG(logger, message) LOG(logger, IGEngine::LogLevel::DEBUG, message)
 #define LOG_INFO(logger, message) LOG(logger, IGEngine::LogLevel::INFO, message)
 #define LOG_WARNING(logger, message) LOG(logger, IGEngine::LogLevel::WARNING, message)
 #define LOG_ERROR(logger, message) LOG(logger, IGEngine::LogLevel::ERROR, message)
 #define LOG_CRITICAL(logger, message) LOG(logger, IGEngine::LogLevel::CRITICAL, message)
+
+#define LOG_FILE_DEBUG(logger, message) LOG_FILE(logger, IGEngine::LogLevel::DEBUG, message)
+#define LOG_FILE_INFO(logger, message) LOG_FILE(logger, IGEngine::LogLevel::INFO, message)
+#define LOG_FILE_WARNING(logger, message) LOG_FILE(logger, IGEngine::LogLevel::WARNING, message)
+#define LOG_FILE_ERROR(logger, message) LOG_FILE(logger, IGEngine::LogLevel::ERROR, message)
+#define LOG_FILE_CRITICAL(logger, message) LOG_FILE(logger, IGEngine::LogLevel::CRITICAL, message)
 
 	// Single instance of a log class for all logging purposes.
 	// There is no reason to have multiple copies of this class which is why it is a singleton.
@@ -59,7 +67,7 @@ namespace IGEngine
 		}
 
 		void Init();
-		void LogMsg(const char* Msg, LogLevel Lvl, const char* File, int Line);
+		void LogMsg(const char* Msg, LogLevel Lvl, const char* File, int Line, bool bWriteToFile);
 
 		~Log()
 		{
@@ -68,11 +76,14 @@ namespace IGEngine
 
 	protected:
 		std::mutex LogMutex;
-		const char* LogLevelToString(LogLevel Level);
+		const char* LogLevelToString(LogLevel Lvl);
 
 	private:
 		static Log* LogInstance;
-		
+
+		void LogConsole(const char* Msg, LogLevel Lvl, const std::tm& LocalTime, const char* File, int Line);
+		void LogFile(const char* Msg, LogLevel Lvl, const std::tm& LocalTime, const char* File, int Line);
+
 		// Private constructor disallows anyone creating multiple instances of the Log class
 		Log() {}
 		// Remove ability to use copy constructor and assignment operator as well

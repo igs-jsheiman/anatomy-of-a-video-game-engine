@@ -15,6 +15,12 @@ int main(int argc, char** argv)
 	LOG_WARNING(logger, "This is a warning message.");
 	LOG_CRITICAL(logger, "This is a critical message.");
 
+	LOG_FILE_INFO(logger, "This is an informational message.");
+	LOG_FILE_DEBUG(logger, "This is a debug message.");
+	LOG_FILE_ERROR(logger, "This is an error message.");
+	LOG_FILE_WARNING(logger, "This is a warning message.");
+	LOG_FILE_CRITICAL(logger, "This is a critical message.");
+
 	auto app = IGEngine::CreateApplication();
 	app->Run();
 	delete app;

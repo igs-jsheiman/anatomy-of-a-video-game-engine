@@ -36,7 +36,7 @@
     <ClInclude Include="src\IGEngine\SmartPointer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\igpch.h">
+    <ClInclude Include="src\igPCH.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\IGEngine\Events.h">
@@ -53,7 +53,7 @@
     <ClCompile Include="src\IGEngine\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\igpch.cpp">
+    <ClCompile Include="src\igPCH.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\IGEngine\Window.cpp">

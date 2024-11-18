@@ -1,4 +1,4 @@
-#include "igpch.h"
+#include "igPCH.h"
 #include "Application.h"
 
 #define DEBUG_LOGGER 0

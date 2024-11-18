@@ -20,13 +20,13 @@
     <ClInclude Include="src\IGEngine\EntryPoint.h" />
     <ClInclude Include="src\IGEngine\SmartPointer.h" />
     <ClInclude Include="src\IGEngine\Window.h" />
-    <ClInclude Include="src\igpch.h" />
+    <ClInclude Include="src\igPCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\IGEngine\Log.cpp" />
     <ClCompile Include="src\IGEngine\Application.cpp" />
     <ClCompile Include="src\IGEngine\Window.cpp" />
-    <ClCompile Include="src\igpch.cpp">
+    <ClCompile Include="src\igPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>

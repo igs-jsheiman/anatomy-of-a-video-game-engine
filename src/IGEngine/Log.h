@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Core.h"
-
 // Must instantiate stl classes for dll prior to usage
 class IGENGINE_API std::mutex;
 

@@ -1,25 +1,31 @@
 #include "igpch.h"
 #include "Application.h"
-#include "Events.h"
-#include "Log.h"
 
 #define DEBUG_LOGGER 0
 
 namespace IGEngine
 {
-	Application::Application()
+	Application::Application() : m_Window()
 	{
+		Initialize();
 	}
 
 	Application::~Application()
 	{
 	}
 
+	void Application::Initialize()
+	{
+		// Initialize the main window...
+		m_Window.Initialize(L"Bird Game", L"Bird Game", 1280, 720);
+
+		// Initialize the logging...
+		m_Logger = IGEngine::Log::GetInstance();
+		m_Logger->Init();
+	}
+
 	void Application::Run()
 	{
-		// Initialize the log functionality
-		IGEngine::Log* logger = IGEngine::Log::GetInstance();
-		logger->Init();
 
 #if DEBUG_LOGGER
 		LOG_INFO(logger, "This is an informational message.");
@@ -35,10 +41,23 @@ namespace IGEngine
 		LOG_FILE_CRITICAL(logger, "This is a critical message.");
 #endif
 
-		WindowResizeEvent e(1280, 720);
-		StrSmartPtr windowEventInfo = e.GetDetailedInfo();
-		LOG_INFO(logger, windowEventInfo.get());
+		// Window Resize Event...
+		WindowResizeEvent resizeEvent(1280, 720);
+		StrSmartPtr windowEventInfo = resizeEvent.GetDetailedInfo();
+		LOG_INFO(m_Logger, windowEventInfo.get());
 
-		while (true);
+		while (m_Window.ProcessMessages())
+		{
+			Update();
+			Render();
+		}
+	}
+
+	void Application::Update()
+	{
+	}
+
+	void Application::Render()
+	{
 	}
 }

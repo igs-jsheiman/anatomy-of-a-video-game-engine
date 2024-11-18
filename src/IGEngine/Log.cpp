@@ -27,7 +27,7 @@ namespace IGEngine
 
 	void Log::Init()
 	{
-		LogMsg("Initialized!", INFO, nullptr, 0, false);
+		LogMsg("Log Initialized!", INFO, nullptr, 0, false);
 	}
 
 	const char* Log::LogLevelToString(LogLevel Level)

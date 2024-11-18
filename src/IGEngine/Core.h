@@ -1,6 +1,5 @@
 #pragma once
 
-
 #ifdef IGE_PLATFORM_WINDOWS
 	#ifdef IGE_BUILD_DLL
 		#define IGENGINE_API __declspec(dllexport)

@@ -8,4 +8,8 @@
 #include <mutex>
 #include <memory>
 #include <functional>
+
+#include "IGEngine/Core.h"
 #include "IGEngine/SmartPointer.h"
+#include "IGEngine/Events.h"
+#include "IGEngine/Log.h"

@@ -12,18 +12,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Events.h" />
-    <ClInclude Include="Source\IGEngine\Log.h" />
-    <ClInclude Include="Source\IGEngine.h" />
-    <ClInclude Include="Source\IGEngine\Application.h" />
-    <ClInclude Include="Source\IGEngine\Core.h" />
-    <ClInclude Include="Source\IGEngine\EntryPoint.h" />
-    <ClInclude Include="Source\IGEngine\SmartPointer.h" />
-    <ClInclude Include="Source\igpch.h" />
+    <ClInclude Include="src\IGEngine\Events.h" />
+    <ClInclude Include="src\IGEngine\Log.h" />
+    <ClInclude Include="src\IGEngine.h" />
+    <ClInclude Include="src\IGEngine\Application.h" />
+    <ClInclude Include="src\IGEngine\Core.h" />
+    <ClInclude Include="src\IGEngine\EntryPoint.h" />
+    <ClInclude Include="src\IGEngine\SmartPointer.h" />
+    <ClInclude Include="src\IGEngine\Window.h" />
+    <ClInclude Include="src\igpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\IGEngine\Log.cpp" />
-    <ClCompile Include="Source\IGEngine\Application.cpp" />
-    <ClCompile Include="Source\igpch.cpp">
+    <ClCompile Include="src\IGEngine\Log.cpp" />
+    <ClCompile Include="src\IGEngine\Application.cpp" />
+    <ClCompile Include="src\IGEngine\Window.cpp" />
+    <ClCompile Include="src\igpch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
@@ -72,11 +75,15 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>igpch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <NoEntryPoint>false</NoEntryPoint>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -2,7 +2,6 @@
 
 namespace IGEngine
 {
-
 	enum class EventType
 	{
 		None = 0,
@@ -188,7 +187,7 @@ namespace IGEngine
 
 		StrSmartPtr GetDetailedInfo()
 		{
-			std::shared_ptr<char[]> buf{ new char[256]() };
+			StrSmartPtr buf{ new char[256]() };
 			snprintf(buf.get(), 256, "WindowResizeEvent: %d, %d", Width_, Height_);
 			return buf;
 		}

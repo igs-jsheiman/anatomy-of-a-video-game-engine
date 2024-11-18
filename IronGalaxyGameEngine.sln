@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{E87254A6-4A0B-4EE4-AA7F-2644AA4918B0}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IronGalaxyGameEngine", "IronGalaxyGameEngine.vcxproj", "{89A4A5AE-3D8C-4F82-BAB3-E73A1A7FD1CC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BirdGame", "BirdGame\BirdGame.vcxproj", "{E87254A6-4A0B-4EE4-AA7F-2644AA4918B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

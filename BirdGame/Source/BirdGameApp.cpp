@@ -1,15 +1,15 @@
 #include "igpch.h"
 #include "IGEngine.h"
 
-class Sandbox : public IGEngine::Application
+class BirdGame : public IGEngine::Application
 {
 public:
 
-	Sandbox(){}
-	~Sandbox(){}
+	BirdGame(){}
+	~BirdGame(){}
 };
 
 IGEngine::Application* IGEngine::CreateApplication()
 {
-	return new Sandbox();
+	return new BirdGame();
 }

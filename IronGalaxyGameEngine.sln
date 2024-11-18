@@ -7,6 +7,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IronGalaxyGameEngine", "Iro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BirdGame", "BirdGame\BirdGame.vcxproj", "{E87254A6-4A0B-4EE4-AA7F-2644AA4918B0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{4D1C10D8-1954-4C9B-AD83-42D18DDBA767}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{1DDB77DE-5BFF-456F-A444-472D3528343B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -24,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89A4A5AE-3D8C-4F82-BAB3-E73A1A7FD1CC} = {1DDB77DE-5BFF-456F-A444-472D3528343B}
+		{E87254A6-4A0B-4EE4-AA7F-2644AA4918B0} = {4D1C10D8-1954-4C9B-AD83-42D18DDBA767}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB710FC4-03F6-4F30-A387-8759CCB3A346}

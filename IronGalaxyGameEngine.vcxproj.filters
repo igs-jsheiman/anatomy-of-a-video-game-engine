@@ -30,9 +30,6 @@
     <ClInclude Include="src\IGEngine\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Events.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\IGEngine\SmartPointer.h">
       <Filter>Header Files</Filter>
     </ClInclude>

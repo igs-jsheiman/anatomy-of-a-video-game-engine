@@ -10,7 +10,7 @@
 
 namespace IGEngine
 {
-	struct IGENGINE_API WinRes
+	struct WinRes
 	{
 		WinRes() = default;
 		WinRes(uint32_t width, uint32_t height) : m_w(width), m_h(height) {}
@@ -19,16 +19,15 @@ namespace IGEngine
 		uint32_t m_h;
 	};
 
-	class IGENGINE_API Window
+	class Window
 	{
 	public:
 		Window();
 		~Window();
 
 		void Initialize(const wchar_t* windowName, const wchar_t* className, int width , int height);
+		bool Update();
 		void Shutdown();
-
-		bool ProcessMessages();
 
 		HWND GetHwnd()			const { return m_Hwnd; }
 		uint32_t GetWidth()		const { return m_Rect.m_w; }

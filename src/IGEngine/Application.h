@@ -5,7 +5,7 @@
 namespace IGEngine
 {
 
-	class Application
+	class IGENGINE_API Application
 	{
 	public:
 		Application();

@@ -24,11 +24,11 @@ namespace IGEngine
 	enum EventCategory
 	{
 		None = 0,
-		EventCategoryApplication	= 1 << 0,
-		EventCategoryInput			= 1 << 1,
-		EventCategoryKeyboard		= 1 << 2,
-		EventCategoryMouse			= 1 << 3,
-		EventCategoryMouseButton	= 1 << 4
+		EventCategoryApplication = 1 << 0,
+		EventCategoryInput = 1 << 1,
+		EventCategoryKeyboard = 1 << 2,
+		EventCategoryMouse = 1 << 3,
+		EventCategoryMouseButton = 1 << 4
 	};
 
 	// Helper macros for defining event types and categories...
@@ -185,9 +185,9 @@ namespace IGEngine
 		unsigned int GetWidth() const { return Width_; }
 		unsigned int GetHeight() const { return Height_; }
 
-		SmartPointer<char[]> GetDetailedInfo()
+		StrSmartPtr GetDetailedInfo()
 		{
-			SmartPointer<char[]> buf{ new char[256]() };
+			StrSmartPtr buf{ new char[256]() };
 			snprintf(buf.get(), 256, "WindowResizeEvent: %d, %d", Width_, Height_);
 			return buf;
 		}

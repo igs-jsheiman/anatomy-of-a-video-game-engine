@@ -26,8 +26,9 @@ namespace IGEngine
 		~Window();
 
 		void Initialize(const wchar_t* windowName, const wchar_t* className, int width , int height);
-		bool Update();
 		void Shutdown();
+
+		bool ProcessMessages();
 
 		HWND GetHwnd()			const { return m_Hwnd; }
 		uint32_t GetWidth()		const { return m_Rect.m_w; }

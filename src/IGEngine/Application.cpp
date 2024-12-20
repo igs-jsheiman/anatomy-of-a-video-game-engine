@@ -43,10 +43,10 @@ namespace IGEngine
 
 		// Window Resize Event...
 		WindowResizeEvent resizeEvent(1280, 720);
-		SmartPointer<char[]> windowEventInfo = resizeEvent.GetDetailedInfo();
+		StrSmartPtr windowEventInfo = resizeEvent.GetDetailedInfo();
 		LOG_INFO(m_Logger, windowEventInfo.get());
 
-		while (m_Window.Update())
+		while (m_Window.ProcessMessages())
 		{
 			Update();
 			Render();

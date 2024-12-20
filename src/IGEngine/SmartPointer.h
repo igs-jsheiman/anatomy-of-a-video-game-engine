@@ -1,7 +1,6 @@
 #pragma once
 
-template<typename T>
-using SmartPointer = std::shared_ptr<T>;
+typedef std::shared_ptr<char[]> StrSmartPtr;
 
 template <typename T>
 class UniquePtr 

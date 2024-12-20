@@ -13,5 +13,3 @@
 #include "IGEngine/SmartPointer.h"
 #include "IGEngine/Events.h"
 #include "IGEngine/Log.h"
-#include "IGEngine/Renderer.h"
-#include "IGEngine/Window.h"

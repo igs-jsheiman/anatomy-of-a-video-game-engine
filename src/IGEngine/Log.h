@@ -1,9 +1,9 @@
 #pragma once
 
 // Must instantiate stl classes for dll prior to usage
-// class IGENGINE_API std::mutex;
+class IGENGINE_API std::mutex;
 
-// Log class based on source code from article: https://araujo88.medium.com/devlog-writing-a-logging-library-in-c-9601ec3699eb
+// Log class based on article from this source : https://araujo88.medium.com/devlog-writing-a-logging-library-in-c-9601ec3699eb
 
 namespace IGEngine
 {

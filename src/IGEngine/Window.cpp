@@ -30,21 +30,10 @@ namespace IGEngine
 					return DefWindowProc(hwnd, umessage, wparam, lparam);
 				}
 			}
-			case WM_MBUTTONDOWN:
-			case WM_MBUTTONUP:
-			case WM_RBUTTONDOWN:
-			case WM_RBUTTONUP:
-			case WM_LBUTTONDOWN:
-			case WM_LBUTTONUP:
-				return 0;
-			case WM_PAINT:
-// 				if (pSample)
-// 				{
-// 					pSample->OnUpdate();
-// 					pSample->OnRender();
-// 				}
-				return 0;
 			case WM_DESTROY:
+			{
+				[[fallthrough]];
+			}
 			case WM_CLOSE:
 			{
 				PostQuitMessage(0);
@@ -94,7 +83,18 @@ namespace IGEngine
 		m_ClassName = className;
 	}
 
-	bool Window::Update()
+	void Window::Shutdown()
+	{
+		HINSTANCE moduleHandle = GetModuleHandle(nullptr);
+
+		DestroyWindow(m_Hwnd);
+		m_Hwnd = nullptr;
+
+		UnregisterClass(m_ClassName, moduleHandle);
+		moduleHandle = nullptr;
+	}
+
+	bool Window::ProcessMessages()
 	{
 		bool running = true;
 		while (running)
@@ -106,6 +106,7 @@ namespace IGEngine
 				{
 					running = false;
 				}
+
 				TranslateMessage(&msg);
 				DispatchMessage(&msg);
 			}
@@ -114,16 +115,5 @@ namespace IGEngine
 		Shutdown();
 
 		return running;
-	}
-
-	void Window::Shutdown()
-	{
-		HINSTANCE moduleHandle = GetModuleHandle(nullptr);
-
-		DestroyWindow(m_Hwnd);
-		m_Hwnd = nullptr;
-
-		UnregisterClass(m_ClassName, moduleHandle);
-		moduleHandle = nullptr;
 	}
 }

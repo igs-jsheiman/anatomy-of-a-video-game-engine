@@ -23,6 +23,7 @@ namespace IGEngine
 
 		Window m_Window;
 		Log* m_Logger;
+		Renderer m_Renderer;
 	};
 
 	// To be defined in a client

@@ -27,7 +27,7 @@ namespace IGEngine
 	{
 	public:
 		RendererImpl() = default;
-		~RendererImpl() = default;
+		~RendererImpl() {}
 
 		void CreateDevice();
 		void CreateCommandQueue();
@@ -71,33 +71,6 @@ namespace IGEngine
 		HANDLE mFenceEvent;
 		uint64_t mFenceValue;
 	};
-
-	void Renderer::Initialize(Window& window)
-	{
-		mImpl.reset(new RendererImpl());
-		mImpl->CreateDevice();
-		mImpl->CreateCommandQueue();
-		mImpl->CreateSwapChain(window.GetHwnd(), window.GetWidth(), window.GetHeight());
-		mImpl->CreateCommandList();
-		mImpl->LoadShader();
-		mImpl->CreateFence();
-
-		// Wait for all the setup work we just did to complete because we are going to re-use the command list
-		mImpl->WaitForPreviousFrame();
-	}
-
-	void Renderer::Render()
-	{
-		mImpl->PopulateCommandListAndSubmit();
-		mImpl->Present();
-		mImpl->WaitForPreviousFrame();
-	}
-
-	void Renderer::Shutdown()
-	{
-	}
-
-//-----------------------------------------------------------------------------------------------------------
 
 	void RendererImpl::CreateDevice()
 	{
@@ -385,5 +358,30 @@ namespace IGEngine
 		}
 
 		mFrameIndex = mSwapChain->GetCurrentBackBufferIndex();
+	}
+
+	void Renderer::Initialize(Window& window)
+	{
+		m_Impl = new RendererImpl;
+		m_Impl->CreateDevice();
+		m_Impl->CreateCommandQueue();
+		m_Impl->CreateSwapChain(window.GetHwnd(), window.GetWidth(), window.GetHeight());
+		m_Impl->CreateCommandList();
+		m_Impl->LoadShader();
+		m_Impl->CreateFence();
+
+		// Wait for all the setup work we just did to complete because we are going to re-use the command list
+		m_Impl->WaitForPreviousFrame();
+	}
+
+	void Renderer::Render()
+	{
+		m_Impl->PopulateCommandListAndSubmit();
+		m_Impl->Present();
+		m_Impl->WaitForPreviousFrame();
+	}
+
+	void Renderer::Shutdown()
+	{
 	}
 }

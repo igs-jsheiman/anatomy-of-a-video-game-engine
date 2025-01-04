@@ -6,8 +6,8 @@
 #include <iomanip>
 #include <fstream>
 #include <mutex>
-#include <memory>
 #include <functional>
+#include <memory>
 
 #include "IGEngine/Core.h"
 #include "IGEngine/SmartPointer.h"

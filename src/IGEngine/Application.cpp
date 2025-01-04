@@ -19,6 +19,8 @@ namespace IGEngine
 		// Initialize the main window...
 		m_Window.Initialize(L"Bird Game", L"Bird Game", 1280, 720);
 
+		m_Renderer.Initialize(m_Window);
+
 		// Initialize the logging...
 		m_Logger = IGEngine::Log::GetInstance();
 		m_Logger->Init();

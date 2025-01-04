@@ -4,10 +4,7 @@ namespace IGEngine
 {
 	class Window;
 	class RendererImpl;
-}
 
-namespace IGEngine
-{
 	class Renderer
 	{
 	public:
@@ -20,6 +17,6 @@ namespace IGEngine
 
 	private:
 		
-		std::unique_ptr<RendererImpl> mImpl;
+		RendererImpl* m_Impl;
 	};
 }

@@ -1,11 +1,13 @@
 #pragma once
 
-#include "Window.h"
-
 namespace IGEngine
 {
+<<<<<<< Updated upstream
 
 	class IGENGINE_API Application
+=======
+	class Application
+>>>>>>> Stashed changes
 	{
 	public:
 		Application();
@@ -21,7 +23,6 @@ namespace IGEngine
 
 		Window m_Window;
 		Log* m_Logger;
-		//Renderer mRenderer;
 	};
 
 	// To be defined in a client

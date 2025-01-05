@@ -54,6 +54,8 @@ namespace IGEngine
 			Update();
 			Render();
 		}
+	
+		m_Window.Shutdown();
 	}
 
 	void Application::Update()
@@ -62,5 +64,6 @@ namespace IGEngine
 
 	void Application::Render()
 	{
+		m_Renderer.Render();
 	}
 }

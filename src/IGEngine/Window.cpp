@@ -43,7 +43,7 @@ namespace IGEngine
 // 					pSample->OnUpdate();
 // 					pSample->OnRender();
 // 				}
-				return 0;
+				return 1;
 			case WM_DESTROY:
 			case WM_CLOSE:
 			{
@@ -86,6 +86,8 @@ namespace IGEngine
 			moduleHandle, 
 			nullptr);
 
+		m_Rect = WinRes(width, height);
+
 		ShowWindow(m_Hwnd, SW_SHOW);
 		SetForegroundWindow(m_Hwnd);
 		SetFocus(m_Hwnd);
@@ -96,24 +98,7 @@ namespace IGEngine
 
 	bool Window::Update()
 	{
-		bool running = true;
-		while (running)
-		{
-			MSG msg{ 0 };
-			if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
-			{
-				if (msg.message == WM_QUIT)
-				{
-					running = false;
-				}
-				TranslateMessage(&msg);
-				DispatchMessage(&msg);
-			}
-		}
-
-		Shutdown();
-
-		return running;
+		return ProcessMessages();
 	}
 
 	void Window::Shutdown()
@@ -125,5 +110,21 @@ namespace IGEngine
 
 		UnregisterClass(m_ClassName, moduleHandle);
 		moduleHandle = nullptr;
+	}
+
+	bool Window::ProcessMessages()
+	{
+		bool running = true;
+		MSG msg = {};
+		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
+		{
+			if (msg.message == WM_QUIT)
+			{
+				running = false;
+			}
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+		return running;
 	}
 }

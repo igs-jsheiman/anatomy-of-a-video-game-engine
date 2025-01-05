@@ -29,6 +29,8 @@ namespace IGEngine
 		bool Update();
 		void Shutdown();
 
+		bool ProcessMessages();
+
 		HWND GetHwnd()			const { return m_Hwnd; }
 		uint32_t GetWidth()		const { return m_Rect.m_w; }
 		uint32_t GetHeight()	const { return m_Rect.m_h; }

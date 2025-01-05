@@ -2,12 +2,7 @@
 
 namespace IGEngine
 {
-<<<<<<< Updated upstream
-
-	class IGENGINE_API Application
-=======
 	class Application
->>>>>>> Stashed changes
 	{
 	public:
 		Application();
@@ -23,7 +18,7 @@ namespace IGEngine
 
 		Window m_Window;
 		Log* m_Logger;
-		Renderer m_Renderer;
+ 		Renderer m_Renderer;
 	};
 
 	// To be defined in a client

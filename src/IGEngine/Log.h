@@ -34,7 +34,7 @@ namespace IGEngine
 
 	// Single instance of a log class for all logging purposes.
 	// There is no reason to have multiple copies of this class which is why it is a singleton.
-	class IGENGINE_API Log
+	class Log
 	{
 	public:
 		static Log* GetInstance()

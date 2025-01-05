@@ -16,7 +16,6 @@
     <ClInclude Include="src\IGEngine\Log.h" />
     <ClInclude Include="src\IGEngine.h" />
     <ClInclude Include="src\IGEngine\Application.h" />
-    <ClInclude Include="src\IGEngine\Core.h" />
     <ClInclude Include="src\IGEngine\EntryPoint.h" />
     <ClInclude Include="src\IGEngine\SmartPointer.h" />
     <ClInclude Include="src\IGEngine\Window.h" />
@@ -40,7 +39,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>

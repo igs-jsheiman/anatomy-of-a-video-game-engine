@@ -43,6 +43,7 @@ namespace IGEngine
 		void WaitForPreviousFrame();
 
 	private:
+
 		ID3D12Device* mDevice;
 		ID3D12CommandQueue* mCommandQueue;
 		IDXGISwapChain3* mSwapChain;
@@ -64,7 +65,6 @@ namespace IGEngine
 		ID3D12PipelineState* mPipelineState;
 		ID3D12Resource* mVertexBuffer;
 		D3D12_VERTEX_BUFFER_VIEW mVertexBufferView;
-
 
 		uint32_t mFrameIndex;
 		ID3D12Fence* mFence;

@@ -33,7 +33,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{89a4a5ae-3d8c-4f82-bab3-e73a1a7fd1cc}</ProjectGuid>
+    <ProjectGuid>{FF03AECC-8CA0-4223-8076-606BE95DF138}</ProjectGuid>
     <RootNamespace>IronGalaxyGameEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -64,8 +64,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)</IntDir>
+    <OutDir>$(SolutionDir)Engine\bin\$(Configuration)-$(Platform)</OutDir>
+    <IntDir>$(SolutionDir)Engine\bin-int\$(Configuration)-$(Platform)</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -75,7 +75,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>igpch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)src\;$(SolutionDir)src\ThirdParty\DirectX\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\src\;$(SolutionDir)Engine\src\ThirdParty\DirectX\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>

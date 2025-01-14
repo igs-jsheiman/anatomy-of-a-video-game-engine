@@ -17,6 +17,7 @@
     <ClInclude Include="src\IGEngine.h" />
     <ClInclude Include="src\IGEngine\Application.h" />
     <ClInclude Include="src\IGEngine\EntryPoint.h" />
+    <ClInclude Include="src\IGEngine\RenderGraph.h" />
     <ClInclude Include="src\IGEngine\SmartPointer.h" />
     <ClInclude Include="src\IGEngine\Window.h" />
     <ClInclude Include="src\IgPCH.h" />
@@ -25,6 +26,7 @@
     <ClCompile Include="src\IGEngine\Renderer.cpp" />
     <ClCompile Include="src\IGEngine\Log.cpp" />
     <ClCompile Include="src\IGEngine\Application.cpp" />
+    <ClCompile Include="src\IGEngine\RenderGraph.cpp" />
     <ClCompile Include="src\IGEngine\Window.cpp" />
     <ClCompile Include="src\IgPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

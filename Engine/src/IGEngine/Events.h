@@ -177,6 +177,15 @@ namespace IGEngine
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
 
+	class SmartChar : public SmartPtr<SmartChar>
+	{
+	public:
+		SmartChar() = default;
+		virtual ~SmartChar() {};
+
+		char str[512];
+	};
+
 	class WindowResizeEvent : public Event
 	{
 	public:
@@ -185,12 +194,12 @@ namespace IGEngine
 		unsigned int GetWidth() const { return Width_; }
 		unsigned int GetHeight() const { return Height_; }
 
-		SmartPointer<char[]> GetDetailedInfo()
-		{
-			SmartPointer<char[]> buf{ new char[256]() };
-			snprintf(buf.get(), 256, "WindowResizeEvent: %d, %d", Width_, Height_);
-			return buf;
-		}
+// 		SmartPointer<char[]> GetDetailedInfo()
+// 		{
+// 			SmartPointer<char[]> buf{ new char[256]() };
+// 			snprintf(buf.get(), 256, "WindowResizeEvent: %d, %d", Width_, Height_);
+// 			return buf;
+// 		}
 
 		EVENT_CLASS_TYPE(WindowResize)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)

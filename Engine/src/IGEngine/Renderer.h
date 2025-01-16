@@ -17,7 +17,6 @@ namespace IGEngine
 
 	private:
 		
-		//RendererImpl* m_Impl;
 		std::unique_ptr<RendererImpl> m_Impl;
 	};
 }

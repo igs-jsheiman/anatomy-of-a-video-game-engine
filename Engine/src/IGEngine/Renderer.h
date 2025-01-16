@@ -8,8 +8,8 @@ namespace IGEngine
 	class Renderer
 	{
 	public:
-		Renderer() = default;
-		~Renderer() = default;
+		Renderer();
+		~Renderer();
 
 		void Initialize(Window& window);
 		void Render();
@@ -17,6 +17,7 @@ namespace IGEngine
 
 	private:
 		
-		RendererImpl* m_Impl;
+		//RendererImpl* m_Impl;
+		std::unique_ptr<RendererImpl> m_Impl;
 	};
 }

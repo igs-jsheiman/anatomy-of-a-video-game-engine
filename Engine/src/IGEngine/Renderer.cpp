@@ -27,7 +27,7 @@ namespace IGEngine
 	{
 	public:
 		RendererImpl() = default;
-		~RendererImpl() {}
+		~RendererImpl() = default;
 
 		void CreateDevice();
 		void CreateCommandQueue();
@@ -360,9 +360,18 @@ namespace IGEngine
 		mFrameIndex = mSwapChain->GetCurrentBackBufferIndex();
 	}
 
+	// Must define constructor/destructor in CPP in order to safely use unique_ptr
+	Renderer::Renderer() : m_Impl(std::make_unique<RendererImpl>())
+	{
+	}
+
+	Renderer::~Renderer()
+	{
+		Shutdown();
+	}
+
 	void Renderer::Initialize(Window& window)
 	{
-		m_Impl = new RendererImpl;
 		m_Impl->CreateDevice();
 		m_Impl->CreateCommandQueue();
 		m_Impl->CreateSwapChain(window.GetHwnd(), window.GetWidth(), window.GetHeight());
@@ -383,5 +392,6 @@ namespace IGEngine
 
 	void Renderer::Shutdown()
 	{
+		m_Impl = nullptr;
 	}
 }

@@ -5,7 +5,7 @@ namespace IGEngine
 	class Window;
 	class RendererImpl;
 
-	class Renderer
+	class Renderer : public Singleton<Renderer>
 	{
 	public:
 		Renderer();

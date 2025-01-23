@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\IGEngine\Memory\IGSMemory.h" />
     <ClInclude Include="src\IGEngine\Renderer.h" />
     <ClInclude Include="src\IGEngine\Events.h" />
     <ClInclude Include="src\IGEngine\Log.h" />
@@ -18,11 +19,13 @@
     <ClInclude Include="src\IGEngine\Application.h" />
     <ClInclude Include="src\IGEngine\EntryPoint.h" />
     <ClInclude Include="src\IGEngine\RenderGraph.h" />
+    <ClInclude Include="src\IGEngine\Singleton.h" />
     <ClInclude Include="src\IGEngine\SmartPointer.h" />
     <ClInclude Include="src\IGEngine\Window.h" />
     <ClInclude Include="src\IgPCH.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\IGEngine\Memory\IGSMemory.cpp" />
     <ClCompile Include="src\IGEngine\Renderer.cpp" />
     <ClCompile Include="src\IGEngine\Log.cpp" />
     <ClCompile Include="src\IGEngine\Application.cpp" />

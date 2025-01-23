@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Singleton.h"
+
 // Must instantiate stl classes for dll prior to usage
 // class IGENGINE_API std::mutex;
 
@@ -34,25 +36,12 @@ namespace IGEngine
 
 	// Single instance of a log class for all logging purposes.
 	// There is no reason to have multiple copies of this class which is why it is a singleton.
-	class Log
+	class Log : public Singleton<Log>
 	{
 	public:
-		static Log* GetInstance()
-		{
-			if (LogInstance == nullptr)
-			{
-				LogInstance = new Log();
-			}
-			return LogInstance;
-		}
 
 		void Init();
 		void LogMsg(const char* Msg, LogLevel Lvl, const char* File, int Line, bool bWriteToFile);
-
-		~Log()
-		{
-			delete this;
-		}
 
 	protected:
 		std::mutex LogMutex;
@@ -63,12 +52,6 @@ namespace IGEngine
 
 		void LogConsole(const char* Msg, LogLevel Lvl, const std::tm& LocalTime, const char* File, int Line);
 		void LogFile(const char* Msg, LogLevel Lvl, const std::tm& LocalTime, const char* File, int Line);
-
-		// Private constructor disallows anyone creating multiple instances of the Log class
-		Log() {}
-		// Remove ability to use copy constructor and assignment operator as well
-		Log(const Log&) = delete;
-		Log& operator=(const Log&) = delete;
 	};
 }
 

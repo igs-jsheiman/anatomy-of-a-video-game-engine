@@ -22,7 +22,7 @@
     <ClInclude Include="src\IGEngine\Singleton.h" />
     <ClInclude Include="src\IGEngine\SmartPointer.h" />
     <ClInclude Include="src\IGEngine\Window.h" />
-    <ClInclude Include="src\IgPCH.h" />
+    <ClInclude Include="src\igspch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\IGEngine\Memory\IGSMemory.cpp" />
@@ -31,7 +31,7 @@
     <ClCompile Include="src\IGEngine\Application.cpp" />
     <ClCompile Include="src\IGEngine\RenderGraph.cpp" />
     <ClCompile Include="src\IGEngine\Window.cpp" />
-    <ClCompile Include="src\IgPCH.cpp">
+    <ClCompile Include="src\igspch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
@@ -79,7 +79,7 @@
       <PreprocessorDefinitions>IGE_PLATFORM_WINDOWS;IGE_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>igpch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>igspch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(SolutionDir)Engine\src\;$(SolutionDir)Engine\src\ThirdParty\DirectX\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>

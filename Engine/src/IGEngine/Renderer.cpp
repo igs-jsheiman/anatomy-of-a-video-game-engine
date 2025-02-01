@@ -1,4 +1,4 @@
-#include "igpch.h"
+#include "igspch.h"
 
 // This helper library has to be included before any SDK headers
 #include "ThirdParty/DirectX/d3dx12.h"

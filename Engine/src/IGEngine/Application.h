@@ -17,8 +17,9 @@ namespace IGEngine
 		void Render();
 
 		Window m_Window;
-		Log* m_Logger;
  		Renderer m_Renderer;
+
+		uint64_t m_Frame = 0;
 	};
 
 	// To be defined in a client

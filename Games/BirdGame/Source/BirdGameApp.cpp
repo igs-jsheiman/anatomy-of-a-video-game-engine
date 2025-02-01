@@ -1,4 +1,4 @@
-#include "igPCH.h"
+#include "igspch.h"
 #include "IGEngine.h"
 
 class BirdGame : public IGEngine::Application
